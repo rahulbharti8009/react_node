@@ -4,6 +4,7 @@ import express from 'express'
 // import {dataJson} from '../backend/AllJson'
 
 const app = express()
+ app.use(express.static('dist')) // use() is a middleware, dist folder generated from frontend , the command is npm run build
 
 const dataJson = {
     "type": "TRUE",
@@ -25,6 +26,6 @@ app.get('/api/login', (req, res)=>{
 const port = process.env.PORT || 3000
 
 app.listen(port , ()=> {
-    console.log(`Server http://localost:3000 ${port}`)
+    console.log(`Server http://localhost:3000/ ${port}`)
 })
 
